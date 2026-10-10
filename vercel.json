@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/webhook.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/webhook",
+      "dest": "api/webhook.js",
+      "methods": ["POST"]
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": "@bot_token",
+    "WEBHOOK_URL": "@webhook_url"
+  }
+}
